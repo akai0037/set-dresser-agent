@@ -8,8 +8,9 @@ This folder is a Maya tool. Read this before touching anything.
 - The shell is PowerShell. Use mayapy for every Python run outside Maya.
 
 ## How to run your work
-- Live, inside my open Maya: the command port on 7001 does not work on this machine.
-  Drop a .py into Documents\maya\claude_bridge\inbox; Maya runs it and writes outbox\<name>.log.
+- Live, inside my open Maya: the command port is open on localhost:7001.
+  & "E:\MAYA\Maya2026\bin\mayapy.exe" send_to_maya.py "import importlib, set_dresser; importlib.reload(set_dresser); set_dresser.scatter(10, 4)"
+- Or drop a .py into Documents\maya\claude_bridge\inbox; Maya runs it and writes outbox\<name>.log.
 - Headless, without opening Maya (run from this folder):
   & "E:\MAYA\Maya2026\bin\mayapy.exe" -c "import maya.standalone; maya.standalone.initialize(); import set_dresser; set_dresser.scatter(5, 2); import maya.cmds as cmds; print(cmds.ls('rock*', 'tree*'))"
 - "Done" means you ran it and looked at what it made. Not that it imported.
